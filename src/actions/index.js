@@ -4,7 +4,7 @@ import { FETCH_TODOS } from "./types";
 export function fetchTodos() {
   return function (dispatch) {
     return axios
-      .get(`${import.meta.env.BACK_END_URL}/api/todo`)
+      .get(`${process.env.REACT_APP_BACK_END_URL}/api/todo`)
       .then(({ data }) => {
         dispatch(setTodos(data));
       });
@@ -14,9 +14,12 @@ export function fetchTodos() {
 export function postTodo(task) {
   return function (dispatch) {
     return axios
-      .post(`${import.meta.env.BACK_END_URL}/api/todo`, { task })
-      .then(() => {
+      .post(`${process.env.REACT_APP_BACK_END_URL}/api/todo`, { task })
+      .then(({ data }) => {
         dispatch(setTodos(data));
+      })
+      .catch((error) => {
+        console.error("Error posting todo:", error.message);
       });
   };
 }

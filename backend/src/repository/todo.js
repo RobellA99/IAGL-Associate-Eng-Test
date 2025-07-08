@@ -9,8 +9,8 @@ let todoList = {
 module.exports = {
   getTodos: () => Promise.resolve(todoList),
   //Created a createTodo method to push new tasks to the array of task objects
-  createTodo: () => {
-    todoList.todos.push({ task: newTask });
+  createTodo: (task) => {
+    todoList.todos.push({ task });
     return Promise.resolve(todoList);
   },
 };

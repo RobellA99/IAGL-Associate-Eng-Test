@@ -36,7 +36,7 @@ const server = () => {
     }
 
     const updatedTodos = await todoService.createTodo(task);
-    res.status(201).json(updayedTodos);
+    res.status(201).json(updatedTodos);
   });
 
   return server;
