@@ -37,3 +37,30 @@
   padding: 8px 16px;
   font-size: 16px;
 }
+
+.todo-card {
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: transform 0.18s cubic-bezier(0.4, 2, 0.6, 1),
+    box-shadow 0.18s cubic-bezier(0.4, 2, 0.6, 1);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  width: 20%;
+}
+
+.todo-card-name {
+  font-size: 18px;
+  font-family: monospace;
+}
+
+.todo-card:hover {
+  transform: translateY(-7px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.13);
+  cursor: pointer;
+}

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Todo from "./Todo";
+// import Todo from "./Todo";
+import TodoCard from "./TodoCard";
 import { fetchTodos, postTodo } from "../actions";
 import { connect } from "react-redux";
 
@@ -43,7 +44,7 @@ class TodoList extends Component {
         <ul className="todo-list">
           {todos && todos.length
             ? todos.map((todo, index) => {
-                return <Todo key={`todo-${index}`} todo={todo.task} />;
+                return <TodoCard key={`todo-${index}`} todo={todo} />;
               })
             : "No todos, yay!"}
         </ul>
