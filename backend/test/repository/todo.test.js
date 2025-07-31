@@ -10,15 +10,15 @@ describe("TODO repository", () => {
       ],
     };
 
-    it("should add a new todo to the list", async () => {
-      const newTask = "Learn testing";
-      await repository.createTodo(newTask);
-
-      const updatedTodos = await repository.getTodos();
-      expect(updatedTodos.todos).toContainEqual({ task: newTask });
-    });
-
     const actual = await repository.getTodos();
     expect(actual).toEqual(expected);
+  });
+
+  it("should add a new todo to the list", async () => {
+    const newTask = "Learn testing";
+    await repository.createTodo(newTask);
+
+    const updatedTodos = await repository.getTodos();
+    expect(updatedTodos.todos).toContainEqual({ task: newTask });
   });
 });
